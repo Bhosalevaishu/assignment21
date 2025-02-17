@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Area of rectangle and circle</title>
+     <style>
+          body {
+               background-color: rgba(202, 246, 247, 0.249);
+          }
+
+          .main-container {
+               display: flex;
+               justify-content: center;
+               border: 1px solid rgba(3, 129, 132, 0.936);
+               border-radius: 10px;
+               box-shadow: 0 0 5px 0 rgba(1, 226, 230, 0.249);
+               margin: 50px auto;
+               width: 1000px;
+               height: 550px;
+          }
+
+          .container {
+               display: flex;
+               justify-content: space-around;
+               border: 1px solid rgba(3, 129, 132, 0.936);
+               border-radius: 10px;
+               box-shadow: 0 0 5px 0 rgba(1, 226, 230, 0.249);
+               margin: 50px auto;
+               width: 350px;
+               height: 400px;
+               padding: 10px;
+          }
+
+          .calculator-container {
+               text-align: center;
+          }
+
+          .input-box {
+               width: 100%;
+               font-size: 25px;
+               padding: 5px;
+               margin: 10px 0;
+               border-radius: 5px;
+               border: 1px solid rgba(0, 0, 0, 0.441);
+          }
+
+          .input-box:focus {
+               outline: none;
+          }
+
+          .btn {
+               width: 40%;
+               display: block;
+               padding: 8px 10px;
+               margin: 20px auto;
+               font-size: 20px;
+               border-radius: 10px;
+               border: none;
+               color: #0e0e0e;
+               cursor: pointer;
+          }
+
+          .btn:hover {
+               border: 1px solid rgba(0, 0, 0, 0.441);
+          }
+
+          .btn-cal {
+               background-color: aqua;
+          }
+
+          .btn-reset {
+               background-color: rgba(255, 0, 0, 0.76);
+          }
+
+          .btn-group {
+               display: flex;
+          }
+
+          .result {
+               text-align: center;
+               font-size: 20px;
+          }
+     </style>
+</head>
+
+<body>
+     <div class="main-container">
+          <div class="container">
+               <div class="calculator-container">
+                    <h1> Area of rectangle</h1>
+                    <input type="number" class="input-box" id="input1" placeholder="Enter length"><br><br>
+                    <input type="number" class="input-box" id="input2" placeholder="Enter width">
+                    <p id="result1" class="result"> Area of Rectangle :</p>
+                    <div class="btn-group">
+                         <button class=" btn btn-reset" onclick="reset()">Reset</button>
+                         <button class=" btn btn-cal" onclick="calrect()">Calculate</button>
+                    </div>
+               </div>
+          </div>
+
+          <div class="container">
+               <div class="calculator-container">
+                    <h1> Area of circle</h1>
+                    <input type="number" class="input-box" id="input3" placeholder="Enter Pi value"><br><br>
+                    <input type="number" class="input-box" id="input4" placeholder="Enter Radius">
+                    <p id="result2" class="result"> Area of Circle :</p>
+                    <div class="btn-group">
+                         <button class=" btn btn-reset" onclick="reSet()">Reset</button>
+                         <button class=" btn btn-cal" onclick="calcircle()">Calculate</button>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+
+     <script>
+
+          function calrect() {
+               const input1Element = document.getElementById("input1");
+               const input2Element = document.getElementById("input2");
+               const result1Element = document.getElementById("result1");
+
+               const calculate = parseInt(input1Element.value) * parseInt(input2Element.value);
+
+               result1Element.innerText = `Area: ${calculate}`;
+          }
+
+          function reset() {
+               const input1Element = document.getElementById("input1");
+               const input2Element = document.getElementById("input2");
+               const result1Element = document.getElementById("result1");
+
+               input1Element.value = "";
+               input2Element.value = "";
+               result1Element.innerText = "Area of Rectangle:";
+          }
+
+
+          function calcircle() {
+               const input3Element = document.getElementById("input3");
+               const input4Element = document.getElementById("input4");
+               const result2Element = document.getElementById("result2");
+
+               const calculate = parseInt(input3Element.value) * parseInt((input4Element.value)*(input4Element.value));
+ 
+               result2Element.innerText = `Area: ${calculate}`;
+          }
+
+           function reSet(){
+               const input3Element = document.getElementById("input3");
+               const input4Element = document.getElementById("input4");
+               const result2Element = document.getElementById("result2");
+
+               input3Element.value = "";
+               input4Element.value = "";
+               result2Element.innerText = "Area of Circle:";
+
+
+           }
+
+     </script>
+</body>
+
+</html>
