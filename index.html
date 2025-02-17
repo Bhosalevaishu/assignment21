@@ -103,7 +103,6 @@
           <div class="container">
                <div class="calculator-container">
                     <h1> Area of circle</h1>
-                    <input type="number" class="input-box" id="input3" placeholder="Enter Pi value"><br><br>
                     <input type="number" class="input-box" id="input4" placeholder="Enter Radius">
                     <p id="result2" class="result"> Area of Circle :</p>
                     <div class="btn-group">
@@ -139,21 +138,19 @@
 
 
           function calcircle() {
-               const input3Element = document.getElementById("input3");
                const input4Element = document.getElementById("input4");
                const result2Element = document.getElementById("result2");
+               const pi =3.14;
 
-               const calculate = parseInt(input3Element.value) * parseInt((input4Element.value)*(input4Element.value));
+               const calculate = parseFloat(pi) *parseFloat((input4Element.value)*(input4Element.value));
  
                result2Element.innerText = `Area: ${calculate}`;
           }
 
            function reSet(){
-               const input3Element = document.getElementById("input3");
                const input4Element = document.getElementById("input4");
                const result2Element = document.getElementById("result2");
 
-               input3Element.value = "";
                input4Element.value = "";
                result2Element.innerText = "Area of Circle:";
 
